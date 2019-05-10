@@ -1,33 +1,142 @@
 @import "vars"
 
+/*==========  Desktop First Method  ==========*/
 
-/*==========  Desktop First  ==========*/
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	.nav
+		&_item
+			padding: 0 10px
 
-// // ≥1200px
-// +media-breakpoint-down(lg)
-// 		&_item
-// 			padding: 0 8px
-// // ≥992px
-// +media-breakpoint-down(md)
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	
+	.nav
+		position: fixed 
+		height: 100vh
+		width: 100vw
+		background-color: rgb(0,0,0)
+		background-color: rgba(0,0,0,.9)
+		overflow-x: hidden
+		z-index: 2
+		transform-origin: top center
+		transform: translateY(-100%)
+		opacity: 0
+		+transition
+		&-active
+			transform: translateY(0%)
+			opacity: 1
+		&_list
+			display: block
+			height: 100%
+			position: relative
+			margin: auto
+			display: flex
+			flex-direction: column
+			align-content: center
+			text-align: center
+		&_item
+			position: relative
+			top: 7%
+			display: block
+			height: 50px
+			border: none
+			font-weight: bold
+			letter-spacing: 2px
+			font-size: 20px
+		.closebtn
+			display: block
+			position: absolute
+			+link
+			color: $text-gray
+			top: 0
+			right: 30px
+			font-size: 60px
+			line-height: 1
+			+transition
+			&:hover
+				color: $header-color
+	.burger
+		display: block
+	.header_content
+		p
+			padding: 0 30px
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	
+	/*Disable Animation on Mobile Devices*/
+	.animated
+		/*CSS transitions*/
+		-o-transition-property: none !important
+		-moz-transition-property: none !important
+		-ms-transition-property: none !important
+		-webkit-transition-property: none !important
+		transition-property: none !important
+		/*CSS transforms*/
+		-o-transform: none !important
+		-moz-transform: none !important
+		-ms-transform: none !important
+		-webkit-transform: none !important
+		transform: none !important
+		/*CSS animations*/
+		-webkit-animation: none !important
+		-moz-animation: none !important
+		-o-animation: none !important
+		-ms-animation: none !important
+		animation: none !important
 
-// // ≥768px
-// +media-breakpoint-down(sm)
 
-// // ≥576px
-// +media-breakpoint-down(xs)
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.header_content
+		h1
+			padding-top: 0
+			padding-bottom: 10px
+		p
+			padding: 0 6px
+		.btn
+			display: none
+		.text_additional
+			display: none
+	
+	.logo_svg
+		position: relative
+		top: -20px
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
 
 
-// /*==========  Mobile First  ==========*/
+/*==========  Mobile First Method  ==========*/
 
-// // ≤576px
-// +media-breakpoint-up(sm)
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
 
-// // ≤768px
-// +media-breakpoint-up(md)
 
-// // ≤992px
-// +media-breakpoint-up(lg)
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	.logo
+		padding-left: 20px
 
-// // ≤1200px
-// +media-breakpoint-up(xl)
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	.burger
+		display: none
+	.nav
+		.closebtn
+			display: none
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
+
 	
